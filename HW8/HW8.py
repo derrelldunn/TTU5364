@@ -1,3 +1,7 @@
+#Derrell Dunn
+#Math 5364
+#HOMEWORK #8
+
 def gcd(a, b):
     if b==0:
       return a
@@ -17,8 +21,18 @@ def gcd_avgnum(a, b, summer):
         for y in range(1, b+1):
             # print gcd_iterations(a,b)
             summer.append(gcd_iterations(x, y))
+
     return summer
 
+
+def gcd_prime_finder(a, b, summer):
+    global number_primes
+    for x in range(1, a+1):
+        for y in range(1, b+1):
+            # print gcd_iterations(a,b)
+            summer.append(gcd(x, y))
+
+    return summer.count(1)
 
 def compute_avg_num_div(source_array):
    return  sum(source_array)/source_array.__len__()
@@ -29,9 +43,13 @@ def clear_array(source_array):
 
 
 divcnt = 0
-print gcd(20, 2)
-print gcd_iterations(1908, 684)
+number_primes = 0
 summer = []
+
+print gcd(20, 2)
+
+print gcd_iterations(1908, 684)
+
 print ""
 print "100---------------------------------------"
 gcd_avgnum(100, 100, summer)
@@ -57,4 +75,6 @@ print "1600 reps-----------------------------------"
 gcd_avgnum(1600, 1600, summer)
 print compute_avg_num_div(summer)
 clear_array(summer)
+
+print gcd_prime_finder(100, 100, summer)
 
