@@ -41,40 +41,39 @@ def clear_array(source_array):
     del source_array[:]
     return source_array
 
+#initialize some global items
+divcnt = 0 # keep division count here
+number_primes = 0 # keep track of number of relative primes
+summer = [] #empty array for passing integegers around
 
-divcnt = 0
-number_primes = 0
-summer = []
+print 'The GCD between 20 and 2 is {}.' .format(gcd(20, 2))
 
-print gcd(20, 2)
-
-print gcd_iterations(1908, 684)
+print 'The number of iterations needed to find the GCD of 1908 and 684 is {}.' .format( gcd_iterations(1908, 684))
 
 print ""
-print "100---------------------------------------"
 gcd_avgnum(100, 100, summer)
-print compute_avg_num_div(summer)
+print 'The average number of divisions for [1,100] * [1,100] is {}.' .format(compute_avg_num_div(summer))
 clear_array(summer)
+
 print ""
-print "200----------------------------------------"
 gcd_avgnum(200, 200, summer)
-print compute_avg_num_div(summer)
+print 'The average number of divisions for [1,200] * [1,200] is {}.' .format(compute_avg_num_div(summer))
 clear_array(summer)
+
 print ""
-print "400-----------------------------------------"
 gcd_avgnum(400, 400, summer)
-print compute_avg_num_div(summer)
+print 'The average number of divisions for [1,400] * [1,400] is {}.' .format(compute_avg_num_div(summer))
 clear_array(summer)
+
 print""
-print "800 reps------------------------------------"
 gcd_avgnum(800, 800, summer)
-print compute_avg_num_div(summer)
+print 'The average number of divisions for [1,800] * [1,800] is {}.' .format(compute_avg_num_div(summer))
 clear_array(summer)
+
 print ""
-print "1600 reps-----------------------------------"
 gcd_avgnum(1600, 1600, summer)
-print compute_avg_num_div(summer)
+print 'The average number of divisions for [1,1600] * [1,1600] is {}.' .format(compute_avg_num_div(summer))
 clear_array(summer)
 
-print gcd_prime_finder(100, 100, summer)
-
+print 'The number of relative primes are {}.' .format( gcd_prime_finder(100, 100, summer))
+print 'The percentage of relative primes are {}%.' .format((gcd_prime_finder(100, 100, summer)/float(summer.__len__()))*100.0)
